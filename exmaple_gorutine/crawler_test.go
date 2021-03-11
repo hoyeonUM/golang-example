@@ -1,9 +1,9 @@
 package exmaple_gorutine_test
 
 import (
-	"github.com/go-practice/exmaple_gorutine"
-	mock_exmaple "github.com/go-practice/exmaple_gorutine/mock"
 	"github.com/golang/mock/gomock"
+	"github.com/hoyeonUM/golang-example/exmaple_gorutine"
+	mock_exmaple "github.com/hoyeonUM/golang-example/exmaple_gorutine/mock"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
@@ -40,4 +40,5 @@ func TestCrawler(t *testing.T) {
 		assert.NotContains(t, successUrls, "https://www.naver.com")
 	})
 }
+
 //mockgen . HttpClient > mock\http_client.go
