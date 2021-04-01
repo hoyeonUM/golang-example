@@ -1,4 +1,4 @@
-package exmaple_gorutine
+package example_gorutine
 
 type HttpClient interface {
 	Request(url string, result chan HttpResponse)
@@ -7,7 +7,6 @@ type HttpResponse struct {
 	StatusCode int
 	Url        string
 	Body       string
-
 }
 
 type Crawler struct {
@@ -32,4 +31,5 @@ func (c *Crawler) DoAction(urls []string) []HttpResponse {
 	}
 	return httpResponses
 }
+
 //mockgen . HttpClient > mock/http_client.go

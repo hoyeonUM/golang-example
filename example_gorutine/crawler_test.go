@@ -1,9 +1,9 @@
-package exmaple_gorutine_test
+package example_gorutine_test
 
 import (
 	"github.com/golang/mock/gomock"
-	"github.com/hoyeonUM/golang-example/exmaple_gorutine"
-	mock_exmaple "github.com/hoyeonUM/golang-example/exmaple_gorutine/mock"
+	"github.com/hoyeonUM/golang-example/example_gorutine"
+	mock_exmaple "github.com/hoyeonUM/golang-example/example_gorutine/mock"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
@@ -17,7 +17,7 @@ func TestCrawler(t *testing.T) {
 		m.EXPECT().Request(gomock.Any(), gomock.Any()).
 			Do(func(arg0, arg1 interface{}) {
 				url := arg0.(string)
-				response := exmaple_gorutine.HttpResponse{
+				response := example_gorutine.HttpResponse{
 					Body:       "<html></html>",
 					StatusCode: 200,
 					Url:        url,
@@ -25,10 +25,10 @@ func TestCrawler(t *testing.T) {
 				if url == "https://www.naver.com" {
 					response.StatusCode = 404
 				}
-				arg1.(chan exmaple_gorutine.HttpResponse) <- response
+				arg1.(chan example_gorutine.HttpResponse) <- response
 			}).
 			Times(len(urls))
-		c := exmaple_gorutine.NewCrawler(m)
+		c := example_gorutine.NewCrawler(m)
 		responses := c.DoAction(urls)
 		assert.Len(t, responses, 2)
 		successUrls := make([]string, 0)
