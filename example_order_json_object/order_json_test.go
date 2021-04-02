@@ -7,7 +7,7 @@ import (
 	"testing"
 )
 
-func TestConcurrent(t *testing.T) {
+func TestOrderJson(t *testing.T) {
 	t.Run(`given string map first key is b and second key is a when parse json then first key is a and second key is b`, func(t *testing.T) {
 		notOrderJson := make(map[string]string)
 		notOrderJson["b"] = "bbb"

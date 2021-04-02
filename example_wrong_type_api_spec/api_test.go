@@ -17,7 +17,7 @@ var response = `
 }
 `
 
-func TestConcurrent(t *testing.T) {
+func TestAPI(t *testing.T) {
 	t.Run(`given wrong type response when use non safe struct json unmarshal then return error`, func(t *testing.T) {
 		ctrl := gomock.NewController(t)
 		defer ctrl.Finish()
