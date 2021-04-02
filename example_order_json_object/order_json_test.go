@@ -1,8 +1,8 @@
-package order_json_object_test
+package example_order_json_object_test
 
 import (
 	"encoding/json"
-	"github.com/hoyeonUM/golang-example/order_json_object"
+	"github.com/hoyeonUM/golang-example/example_order_json_object"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
@@ -21,7 +21,7 @@ func TestConcurrent(t *testing.T) {
 		notOrderJson["b"] = "bbb"
 		notOrderJson["a"] = "aaa"
 
-		OrderJson := order_json_object.OrderJsonMap{}
+		OrderJson := example_order_json_object.OrderJsonMap{}
 		OrderJson.Order = []string{"b", "a"}
 		OrderJson.Map = notOrderJson
 		b, _ := json.Marshal(OrderJson)

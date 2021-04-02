@@ -1,4 +1,4 @@
-package order_json_object
+package example_order_json_object
 
 import (
 	"bytes"
